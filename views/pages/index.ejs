@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+   <%- include('../partials/head'); %>
+<body>
+   <header>
+      <%- include('../partials/navbar'); %>
+      <h2>Cooking Website</h2>
+      <h3>Powered by Spoonacular</h3>
+      <br>
+      <%- include('../partials/filter'); %>
+      
+      <br>
+      <form id="search-recipes" action="/search" method="GET">         
+         <input type="text" id="search-recipes" placeholder="Search Recipes">         
+         <div>
+            <input type="submit" value="Submit">
+         </div>         
+      </form>
+      <br>      
+      <br>
+      <img src="<%= background %>" width="500px" height="400px" loading="lazy">
+      <br>
+      <br>
+      <!--
+      <form id="suggestions-form" action="/recipe/" method="GET">      
+         <label for="11253">Recipe X1</label>
+         <input type="radio" id="11253" name="recipe" value="pasta con tonno" class="recipe">
+         <label for="11280">Recipe X2</label>
+         <input type="radio" id="11280" name="recipe" value="pasta alfredo" class="recipe">
+         <br>
+         <input type="submit" value="Submit">
+      </form>
+      -->
+   
+   </header>
+   <main>
+      <%- suggestions.success===true ? include('../partials/suggestions',{results: suggestions.results}) : include('../partials/error',{message:suggestions.message}); %>     
+   </main>
+   <%- include('../partials/footer'); %>
+   <script src="/js/home/formValidation.js" type="text/javascript"></script>
+</body>

@@ -1,0 +1,14 @@
+<div>
+   <h1>Suggestions</h1>
+   <form id="suggestions-form" action="/recipe/" method="GET">     
+      <% results.forEach((result)=>{%>
+            <br>        
+            <label for="<%= result.id %>"><%= result.title %></label>
+            <input type="radio" id="<%= result.id %>" name="recipe" value="<%= result.title %>" class="recipe">
+            <br>
+            <img src="<%= result.image %>" alt="recipe-image" width="200px" height="150px">                            
+      <%})%>
+      <br>
+      <input type="submit" value="Submit">      
+   </form>
+</div>

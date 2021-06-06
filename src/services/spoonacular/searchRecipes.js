@@ -1,5 +1,5 @@
 const request = require('request')
-const concatParams = require('../utils/concatParams')
+const concatParams = require('./utils/concatParams')
 
 const searchRecipes = function (params,callback) {
    const api_key = process.env.SPOONACULAR_API_KEY
